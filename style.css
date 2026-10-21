@@ -1,0 +1,37 @@
+body{
+    font-family: arial;
+    color: rgba(249, 248, 248);
+    background: radial-gradient(#14205c, #060a1c);
+    
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.navegacion{
+    padding: 0px 35px 0px 35px;
+}
+#side-b{
+    padding: 0px 67px 0px 30px;
+}
+#biografia{
+    color:aliceblue;
+    
+}
+#registrate{
+    background-color: rgb(3, 100, 3);
+    padding: 20px;
+    margin: 70px 50px 50px 30px;
+}
+header{
+    background-color: rgb(0, 0, 33);
+    border-radius: 50px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    padding-top: 50px;
+    padding-left: 60px;
+    margin: 150px;
+}
+ 
