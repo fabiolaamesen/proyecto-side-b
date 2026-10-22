@@ -39,11 +39,11 @@ header{
     padding-left: 60px;
     margin: 150px;
 }
-#trending h2{
+#secciones h2{
     font-size: 32px;
     margin-bottom: 0px;
 }
-#trending p{
+#secciones p{
     font-size: 16px;
     margin-bottom: 30px;
     opacity: 50%;
@@ -81,4 +81,50 @@ header{
     font-size: 14px;
     margin: 8px 0;
     opacity: 60%;
+}
+.categoria {
+    font-size: 11px;
+    color: #a9afd0;
+    background-color: #171d3b;
+    padding: 5px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.interacciones{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    color: #b8bfdc;
+    font-size: 14px;
+}
+.likes,
+.comentarios {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.corazon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.comentarios svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+hr{
+    border: none;
+    border-top: 1.5px solid #252b4a;
+    margin: 20px 0;
+}
+.username{
+    opacity: 40%;
+    font-weight: lighter;
+    font-size: 16px;
+}
+.publicaciones{
+    
 }
