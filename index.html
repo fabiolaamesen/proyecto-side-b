@@ -13,13 +13,13 @@
             Side B
         </h1>
         <h3 class="navegacion">
-            Explorar
+            Acerca de
         </h3>
         <h3 class="navegacion">
             Reseñas
         </h3>
         <h3 class="navegacion">
-            Playlists
+            
         </h3>
         <h3 class="navegacion">Perfil</h3>
     </nav>
@@ -32,7 +32,7 @@
         </h2>
     </header>
     <main>
-        <section id="trending">
+        <section id="secciones">
         <h2>
             Trending
         </h2>
@@ -110,6 +110,78 @@
                     </p>
             </div>
         </div>
+        <section id="secciones">
+            <h2>
+                Actividad
+            </h2>
+            <p>
+                Descubre lo que opinan los demás
+            </p>
+            <hr>
+        </section>
+        <div class="publicaciones">
+            <article class="publicacion">
+                <h3>
+                    matt <span class="username">@halleymatt</span>
+                </h3>
+                <p>
+                    HIT ME HARD AND SOFT albúm sin skips. 10/10. Lo mejor que ha creado Billie Eilish
+                </p>
+                <span class="categoria">Reseña de albúm</span>
+                <div class="interacciones">
+                <span class="likes">
+                    <span class="corazon">♡</span> 24 
+                </span>
+                <span class="comentarios">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle preview-icon"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+                6 
+                </span>
+                </div>
+            </article>
+
+            <hr>
+
+            <article class="publicacion">
+                <h3>
+                    Fabi N ⚜ <span class="username">@fnaranjo_26</span>
+                </h3>
+                <p>
+                    Body and Blood de Ghost me da muchas vibras góticas y el ritmo es tranquilo, en mi opinión, me hace sentir como Morticia Adams
+                </p>
+                <span class="categoria">Reseña de canción</span>
+                <div class="interacciones">
+                <span class="likes">
+                    <span class="corazon">♡</span> 46 
+                </span>
+                <span class="comentarios">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle preview-icon"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+                15 
+                </span>
+                </div>
+            </article>
+        </div>
+        <section id="crear-publicacion">
+            <h2>
+                Crear publicación
+            </h2>
+
+            <form>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario">
+                <label for="contenido">¿Qué estás escuchando?</label>
+                <textarea id="contenido" name="contenido"></textarea>
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option>Selecciona una categoría:</option>
+                    <option value="reseña">Reseña de albúm</option>
+                    <option value="reseña">Reseña de canción</option>
+                    <option value="discusion">Discusión</option>
+                    <option value="recomendacion">Recomendación musical</option>
+                    <option value="polemica">Polémica</option>
+                    <option value="descubirmiento">Descubrimiento</option>
+                </select>
+                <button type="submit">Publicar</button>
+            </form>
         </section>
     </main>
 </body>
