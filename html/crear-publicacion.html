@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <!--Navegador de secciones-->
         <nav>
         <div class="navegacion">
         <h1 id="side-b">
@@ -33,13 +34,16 @@
         </div>
     </nav>
         <section id="crear-publicacion">
+            <!--Apartado para crear publicacion-->
             <h2>
                 Crear publicación
             </h2>
 
             <form method="post">
+                <!--Area de texto para el contenido de la publicacion-->
                 <label for="contenido">¿Qué estás escuchando?</label>
                 <textarea id="contenido" name="contenido" placeholder="Este albúm nuevo me encantó"></textarea>
+                <!--Selector de categorias-->
                 <label for="categoria">Selecciona una categoría:</label>
                 <select id="categoria" name="categoria">
                     <option value="reseña">Reseña de albúm</option>
@@ -49,6 +53,7 @@
                     <option value="polemica">Polémica</option>
                     <option value="descubirmiento">Descubrimiento</option>
                 </select>
+                <!--Boton de publicar-->
                 <button type="submit">Publicar</button>
             </form>
         </section>
