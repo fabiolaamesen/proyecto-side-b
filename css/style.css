@@ -12,8 +12,13 @@ nav{
 }
 a{
     text-decoration: none;
+    color: rgb(240, 248, 255);
 }
 .navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
     padding: 0px 35px 0px 35px;
 }
 #side-b{
