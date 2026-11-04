@@ -11,6 +11,7 @@ nav{
     
 }
 .navegacion{
+    text-decoration: none;
     padding: 0px 35px 0px 35px;
 }
 #side-b{
