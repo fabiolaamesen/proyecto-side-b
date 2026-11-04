@@ -10,8 +10,10 @@ nav{
     align-items: center;
     
 }
-.navegacion{
+a{
     text-decoration: none;
+}
+.navegacion{
     padding: 0px 35px 0px 35px;
 }
 #side-b{
