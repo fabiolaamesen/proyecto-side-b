@@ -13,6 +13,11 @@ nav{
 a{
     text-decoration: none;
     color: rgb(240, 248, 255);
+    transition: transform 0.3s ease;
+}
+a:hover{
+    transform: scale(1.1);
+    color: #4ee1b0;
 }
 .navegacion{
     display: flex;
@@ -28,16 +33,7 @@ a{
     color:aliceblue;
     
 }
-#registrate{
-    background-color: rgb(3, 100, 3);
-    padding: 20px;
-    margin: 70px 50px 50px 30px;
-    border-radius: 25px;
-    transition: transform 0.3s ease;
-}
-#registrate:hover{
-    transform: translateY(-5px)
-}
+
 header{
     background-color: rgb(0, 0, 33);
     border-radius: 25px;
@@ -47,11 +43,11 @@ header{
     padding-left: 60px;
     margin: 150px;
 }
-#secciones h2{
+.secciones h2{
     font-size: 32px;
     margin-bottom: 0px;
 }
-#secciones p{
+.secciones p{
     font-size: 16px;
     margin-bottom: 30px;
     opacity: 50%;
@@ -132,4 +128,24 @@ hr{
     opacity: 40%;
     font-weight: lighter;
     font-size: 16px;
+}
+footer{
+    margin-top: 80px;
+    padding: 40px 20px;
+    
+    text-align: center;
+}
+.footer-nombre{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+.footer-lema{
+    opacity: 60%;
+    margin: 6px 0 20px;
+}
+.footer-copy{
+    font-size: 13px;
+    opacity: 40%;
+    margin: 0;
 }
