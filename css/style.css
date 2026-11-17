@@ -409,3 +409,9 @@ footer{
 .favoritos .albumes img:hover{
     transform: translateY(-5px);
 }
+/*Espaciado a los lados en RESEÑAS*/
+.feed-resenas{
+    width: min(800px, calc(100% - 60px));
+    margin: 0 auto;
+    padding-top: 40px;
+}
