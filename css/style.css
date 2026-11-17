@@ -415,3 +415,77 @@ footer{
     margin: 0 auto;
     padding-top: 40px;
 }
+
+/* ---- CREAR PUBLICACION ---- */
+
+/*Contenedor de form centrado*/
+#crear-publicacion{
+    width: min(640px, calc(100% - 60px));
+    margin: 60px auto 0;
+    padding: 35px;
+    background-color: #1f2d71;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+/*Titulo de contenedor*/
+#crear-publicacion h2{
+    margin: 0 0 25px;
+    font-size: 32px;
+}
+/*Formulario organizado uno arriba del otro*/
+#crear-publicacion form{
+    display: grid;
+    gap: 8px;
+}
+/*Titulos de cada campo*/
+#crear-publicacion label{
+    margin-top: 12px;
+    font-size: 15px;
+    color: #b8bfdc;
+}
+/*Label 1*/
+#crear-publicacion label:first-of-type{
+    margin-top: 0;
+}
+/*Posicion de textarea y selector de categoria*/
+#crear-publicacion textarea,
+#crear-publicacion select{
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    background-color: #060a1c;
+    color: inherit;
+    font: inherit;
+    border: 1px solid #34439a;
+    border-radius: 12px;
+}
+/*Altura del textarea*/
+#crear-publicacion textarea{
+    min-height: 140px;
+    resize: vertical;
+}
+/*Focus al darle click al campo*/
+#crear-publicacion textarea:focus,
+#crear-publicacion select:focus{
+    outline: 2px solid #4ee1b0;
+    border-color: #4ee1b0;
+}
+/*Boton publicar*/
+#crear-publicacion button{
+    justify-self: start;
+    margin-top: 16px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 999px;
+    background-color: #ffc93c;
+    color: #060a1c;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+/*Hover del boton de publicar*/
+#crear-publicacion button:hover{
+    transform: translateY(-3px);
+}
