@@ -1,3 +1,6 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 /* ----- GENERAL ----- */
 
 /*Estilos predeterminados de la página*/
@@ -5,8 +8,13 @@ body{
     font-family: arial;
     color: rgba(249, 248, 248);
     background: radial-gradient(#14205c, #060a1c);
+    margin: 0;
+    min-height: 100vh;
 }
-
+main{
+    width: min(1100px, calc(100% - 60px));
+    margin: 0 auto;
+}
 /* ----- MENÚ DE NAVEGACIÓN ----- */
 
 /*Contenedor de navegación*/
@@ -488,4 +496,33 @@ footer{
 /*Hover del boton de publicar*/
 #crear-publicacion button:hover{
     transform: translateY(-3px);
+}
+@media (max-width: 800px){
+
+    /* Menú: los enlaces pasan a varias líneas y el título queda arriba, centrado */
+    .navegacion{
+        flex-wrap: wrap;
+        gap: 12px 22px;
+        padding: 0 15px 15px;
+    }
+    #side-b{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* Caja del inicio: menos relleno para que el texto tenga espacio */
+    header{
+        padding: 30px;
+    }
+
+    /* Las 3 tarjetas de "Acerca de" pasan a una sola columna */
+    #funciones{
+        grid-template-columns: 1fr;
+    }
+
+    /* Bloque final de "Acerca de": menos relleno */
+    #idea{
+        padding: 30px;
+    }
 }
