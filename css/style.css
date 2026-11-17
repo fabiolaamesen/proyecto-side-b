@@ -1,24 +1,33 @@
+/* ======-----=== GENERAL ----- */
+
+/*Estilos predeterminados de la página*/
 body{
     font-family: arial;
     color: rgba(249, 248, 248);
     background: radial-gradient(#14205c, #060a1c);
-    
 }
+
+/* ----- MENÚ DE NAVEGACIÓN ----- */
+
+/*Contenedor de navegación*/
 nav{
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
+/*Enlaces de navegación*/
 a{
     text-decoration: none;
     color: rgb(240, 248, 255);
     transition: transform 0.3s ease;
 }
+/*Hover de enlaces de navegación*/
 a:hover{
     transform: scale(1.1);
     color: #4ee1b0;
 }
+/*Fila de navegación*/
 .navegacion{
     display: flex;
     justify-content: center;
@@ -26,14 +35,18 @@ a:hover{
     gap: 35px;
     padding: 0px 35px 0px 35px;
 }
+/*Título de Side B*/
 #side-b{
     padding: 0px 67px 0px 30px;
 }
+
+/* ----- PESTAÑA PRINCIPAL ----- */
+
+/*Título de la caja*/
 #biografia{
     color:aliceblue;
-    
 }
-
+/*Caja de bienvenida de la página*/
 header{
     background: linear-gradient(135deg, #1f2d71, rgb(0, 0, 33) 60%);
     border: 1px solid #2c3c8f;
@@ -44,21 +57,31 @@ header{
     padding-left: 60px;
     margin: 150px;
 }
+
+/* ----- TÍTULOS DE SECCIÓN ----- */
+
+/*Título de secciones*/
 .secciones h2{
     font-size: 32px;
     margin-bottom: 0px;
 }
+/*Subtítulo*/
 .secciones p{
     font-size: 16px;
     margin-bottom: 30px;
     opacity: 50%;
 }
+
+/* ----- ÁLBUMES ----- */
+
+/*Fila de álbumes en tendencia*/
 .albumes{
     display: flex; 
     flex-direction: row;
     gap: 25px;
     align-items: flex-start;
 }
+/*Tarjeta de álbumes*/
 .album{
     background-color:#1f2d71 ;
     padding: 25px;
@@ -69,9 +92,11 @@ header{
     box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+/*Hover de tarjetas de álbumes*/
 .album:hover{
     transform: translateY(-5px);
 }
+/*Portada de álbumes*/
 .album img{
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -79,14 +104,20 @@ header{
     border-radius: 10px;
     display: block;
 }
+/*Nombre de álbumes*/
 .album h3{
     font-size: 16px;
 }
+/*Características del álbum*/
 .album p{
     font-size: 14px;
     margin: 8px 0;
     opacity: 60%;
 }
+
+/* ----- PUBLICACIONES ----- */
+
+/*Categorías de cada publicación*/
 .categoria {
     font-size: 11px;
     color: #a9afd0;
@@ -95,6 +126,7 @@ header{
     border-radius: 20px;
     white-space: nowrap;
 }
+/*Likes y comentarios abajo de cada publicación*/
 .interacciones{
     display: flex;
     align-items: center;
@@ -103,88 +135,177 @@ header{
     color: #b8bfdc;
     font-size: 14px;
 }
+/*Se alinea el icono con la cantidad*/
 .likes,
 .comentarios {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
-
+/*Tamaño del icono de like*/
 .corazon {
-    font-size: 22px;
-    line-height: 1;
+    width: 20px;
+    height: 20px;
 }
 
+/* -----> BOTONES LIKE Y COMENTAR <----- */
+
+/*Modifica el aspecto predeterminado de los iconos*/
+.boton-like,
+.boton-comentar{
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+}
+/* Hover del icono de like*/
+.boton-like:hover .corazon{
+    color: #ff6b6b;
+}
+/*Rellena el like al darle click*/
+.boton-like.activo .corazon{
+    color: #ff3b4f;
+    fill: #ff3b4f;
+}
+/*Hover del icono de comentario*/
+.boton-comentar:hover{
+    color: #4ee1b0;
+}
+
+/* -----> COMENTARIOS <----- */
+
+/*Zona de publicacion separada por una línea*/
+.seccion-comentarios{
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #252b4a;
+}
+/*Tamaño de comentarios*/
+.comentario{
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+/*Nombre de usuario en negrita (en el comentario)*/
+.comentario strong{
+    margin-right: 6px;
+}
+/*Campo de texto*/
+.form-comentario{
+    display: flex;
+    gap: 10px;
+}
+/*Campo para comentar*/
+.form-comentario input{
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid #34439a;
+    background-color: #060a1c;
+    color: inherit;
+    font: inherit;
+}
+/*Color de boton de comentario*/
+.form-comentario button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background-color: #ffc93c;
+    color: #060a1c;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*Tamaño de icono de comentario*/
 .comentarios svg {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
 }
+/*Línea de separación*/
 hr{
     border: none;
     border-top: 1.5px solid #252b4a;
     margin: 20px 0;
 }
+/*Nombre de usuario*/
 .username{
     opacity: 40%;
     font-weight: lighter;
     font-size: 16px;
 }
+
+/* -----> PIE DE PÁGINA <----- */
+
+/*Pie de cabeza con espaciado*/
 footer{
     margin-top: 80px;
     padding: 40px 20px;
     
     text-align: center;
 }
+/*Nombre de Side B*/
 .footer-nombre{
     font-size: 22px;
     font-weight: bold;
     margin: 0;
 }
+/*Lema de la página*/
 .footer-lema{
     opacity: 60%;
     margin: 6px 0 20px;
 }
+/*Derechos de autor*/
 .footer-copy{
     font-size: 13px;
     opacity: 40%;
     margin: 0;
 }
 
+/* -----> ACERCA DE <----- */
+
+/*Centra las 3 secciones de la página*/
 #acerca, #funciones, #idea{
     width: min(1000px, calc(100% - 60px));
     margin: 0 auto;
 }
+/*Introduccion centrada*/
 #acerca{
     padding: 90px 0 60px;
     text-align: center;
 }
+/*Título de Qué es*/
 #acerca h2{
     font-size: 36px;
     line-height: 1.1;
     margin: 0 0 25px;
 }
+/*Hace que las palabras resaltadas se vean amrillas*/
 .resaltado{
     color: #ffc93c;
 }
+/*Párrafos de la introducción*/
 #acerca p{
     max-width: 680%;
     line-height: 1.7;
     margin: 0 auto 18px;
     font-size: 19px;
 }
+/*Columnas de funciones*/
 #funciones{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding-bottom: 70px;
 }
+/*Se centra el titulo de las tarjetas*/
 #funciones h2{
     grid-column: 1 / -1;
     text-align: center;
     font-size: 32px;
     margin: 0 0 15px;
 }
+/*Fondo, esquinas redondeadas y sombra en las tarjetas de funcion de Side B*/
 .tarjeta-funciones{
     background-color: rgb(30, 43, 110);
     padding: 30px;
@@ -192,9 +313,11 @@ footer{
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+/*Hover en las tarjetas de las funciones de Side B*/
 .tarjeta-funciones:hover{
     transform: scale(1.02);
 }
+/*Colores de los títulos de las funciones de Side B*/
 #opiniones{
     font-size: 20px;
     color: rgb(250, 83, 117);
@@ -207,12 +330,14 @@ footer{
     font-size: 20px;
     color: rgb(83, 225, 250);
 }
+/*Idea detras de Side B*/
 #idea{
     margin-bottom: 90px;
     padding: 50px;
     background-color: rgb(0, 0, 33);
     border-radius: 20px;
 }
+/*H3 de la idea detras de Side B*/
 #idea h3{
     margin: 0 0 15px;
     font-size: 28px;
