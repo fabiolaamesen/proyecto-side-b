@@ -244,3 +244,36 @@ botonesComentar.forEach(function(boton){
     }
     });
 });
+//Enviar un comentario
+const formularios = document.querySelectorAll(".form-comentario");
+formularios.forEach(function(form){
+    form.addEventListener("submit", function(evento){
+        evento.preventDefault();
+        const input = form.sequerySelector("input");
+        const texto = input.value.trim();
+
+        if (texto === "")
+            return;
+
+        const publicacion = form.closest(".publicacion");
+        const lista = publicacion.sequerySelector(".lista-comentarios");
+
+        const comentario = document.createElement("div");
+        comentario.classList.add("comentario");
+
+        const autor = document.createElement("strong");
+        autor.textContent = usuarioActual;
+
+        const contenido = document.createElement("span");
+        contenido.textContent = texto;
+
+        comentario.appendChild(autor);
+        comentario.appendChild(contenido);
+        lista.appendChild(comentario);
+
+        input.value = "";
+
+        const contador = publicacion.querySelector(".contador-comentarios");
+        contador.textContent = Number(contador.textContent) + 1;
+    });
+});
