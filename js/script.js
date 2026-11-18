@@ -230,3 +230,17 @@ botonesLike.forEach(function(boton){
         contador.textContent = cantidad;
     });
 });
+//Abrir y cerrar comentarios
+const botonesComentar = document.querySelectorAll(".boton-comentar");
+botonesComentar.forEach(function(boton){
+    boton.addEventListener("click", function(){
+    const publicacion = boton.closest(".publicacion");
+    const seccion = publicacion.querySelector(".seccion-comentarios");
+
+    seccion.hidden = !seccion.hidden;
+
+    if (!seccion.hidden){
+        seccion.querySelector("input").focus();
+    }
+    });
+});
