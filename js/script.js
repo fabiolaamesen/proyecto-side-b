@@ -84,3 +84,77 @@ const publicacionesIniciales = [
     comentarios: []
 }
 ];
+//Guarda lista de publicaciones
+function guardarPublicaciones(lista){
+    localStorage.setItem(clavePublicaciones, JSON.stringify(lista));
+}
+//Lee las publicaciones guardadas, las lee y las devuelve
+function leerPublicaciones(){
+    const guardado = localStorage.getItem(clavePublicaciones);
+
+    if (guardado === null){
+        guardarPublicaciones(publicacionesIniciales);
+        return publicacionesIniciales;
+    }
+    return JSON.parse(guardado);
+}
+//Dibujar publicaciones
+const iconoCorazon = '<svg class="corazon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>';
+const iconoComentario = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle preview-icon"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>';
+
+function escapar(texto){
+    const div = document.createElement("div");
+    div.textContent = texto;
+    return div.innerHTML;
+}
+//HTML  de una publicacion guardada
+function crearComentario(comentario){
+    return `<div class="comentario"><strong>${escapar(comentario.usuario)}</strong><span>${escapar(comentario.texto)}</span></div>`;
+}
+//HTML completo de una publicacion
+function crearPublicacion(publicacion){
+    const comentarios = publicacion.comentarios.map(crearComentario).join("");
+    return `
+    <article class="publicacion" data-id="${publicacion.id}">
+        <h3>
+            ${escapar(publicacion.nombre)} <span class="username">${escapar(publicacion.usuario)}</span>
+        </h3>
+        <p>
+            ${escapar(publicacion.texto)}
+        </p>
+        <span class="categoria">${escapar(publicacion.categoria)}</span>
+        <div class="interacciones">
+            <span class="likes">
+                <button class="boton-like" type="button" aria-label="Me gusta">
+                    ${iconoCorazon}
+                </button>
+                <span class="contador">${publicacion.likes}</span>
+            </span>
+            <span class="comentarios">
+                <button class="boton-comentar" type="button" aria-label="Comentar">
+                    ${iconoComentario}
+                </button>
+                <span class="contador-comentarios">${publicacion.numComentarios}</span>
+            </span>
+        </div>
+        <div class="seccion-comentarios" hidden>
+            <div class="lista-comentarios">${comentarios}</div>
+            <form class="form-comentario">
+                <input type="text" placeholder="Escribe un comentario..." required>
+                <button type="submit">Comentar</button>
+            </form>
+        </div>
+    </article>`;
+}
+//Lista de publicaciones en contenedor
+function mostrarLista(idContenedor, lista){
+    const contenedor = document.getElementById(idContenedor);
+    if (contenedor === null)
+        return;
+    if (lista.length === 0){
+        contenedor.innerHTML = "<p>Todavía no hay publicaciones.</p>";
+        return;
+    }
+    //Convierte las publicaciones en HTML
+    contenedor.innerHTML = lista.map(crearPublicacion).join("<hr>");
+}
