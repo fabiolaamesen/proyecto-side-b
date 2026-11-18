@@ -158,3 +158,16 @@ function mostrarLista(idContenedor, lista){
     //Convierte las publicaciones en HTML
     contenedor.innerHTML = lista.map(crearPublicacion).join("<hr>");
 }
+//Lee publicaciones y las reparte
+const todas = leerPublicaciones();
+
+//Muestra solo las 4 mas recientes
+mostrarLista("lista-inicio", todas.slice(0, 4));
+
+//Muestra todas las reseñas
+mostrarLista("lista-resenas", todas);
+
+//Muestra solo las reseñas del perfil
+mostrarLista("lista-perfil", todas.filter(function(publicacion){
+    return publicacion.usuario === usuarioActual;
+}));
