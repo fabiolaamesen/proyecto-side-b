@@ -177,6 +177,8 @@ const formPublicacion = document.getElementById("form-publicacion");
 //Se salta la creacion de una publicacion si se ubica en otra pagina
 if (formPublicacion !== null){
     formPublicacion.addEventListener("submit", function(evento){
+
+        console.log("Submit detectado");
         //Evita que el form recargue la pagina
         evento.preventDefault();
 
@@ -215,7 +217,7 @@ const botonesLike = document.querySelectorAll(".boton-like");
 botonesLike.forEach(function(boton){
     boton.addEventListener("click", function(){
         //Cambia el contador de likes
-        const contador = boton.closest("likes").querySelector(".contador");
+        const contador = boton.closest(".likes").querySelector(".contador");
         let cantidad = Number(contador.textContent);
 
         //Funcion para cuando se le da like o se le quita el like a una publicacion
@@ -249,14 +251,14 @@ const formularios = document.querySelectorAll(".form-comentario");
 formularios.forEach(function(form){
     form.addEventListener("submit", function(evento){
         evento.preventDefault();
-        const input = form.sequerySelector("input");
+        const input = form.querySelector("input");
         const texto = input.value.trim();
 
         if (texto === "")
             return;
 
         const publicacion = form.closest(".publicacion");
-        const lista = publicacion.sequerySelector(".lista-comentarios");
+        const lista = publicacion.querySelector(".lista-comentarios");
 
         const comentario = document.createElement("div");
         comentario.classList.add("comentario");
