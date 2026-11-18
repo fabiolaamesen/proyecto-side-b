@@ -171,3 +171,41 @@ mostrarLista("lista-resenas", todas);
 mostrarLista("lista-perfil", todas.filter(function(publicacion){
     return publicacion.usuario === usuarioActual;
 }));
+//Crear una publicacion
+//Busca el form para crear una publicacion
+const formPublicacion = document.getElementById("form-publicacion");
+//Se salta la creacion de una publicacion si se ubica en otra pagina
+if (formPublicacion !== null){
+    formPublicacion.addEventListener("submit", function(evento){
+        //Evita que el form recargue la pagina
+        evento.preventDefault();
+
+        //Lee lo que el usuario escribe y la categoria que elige
+        const texto = document.getElementById("contenido").value.trim();
+        const categoria = document.getElementById("categoria").value;
+
+        //Si el usuario no escribe nada
+        if (texto === "")
+            return;
+
+        //Arma la nueva publicacion
+        const nueva = {
+            id: Date.now(),
+            nombre: nombreActual,
+            usuario: usuarioActual,
+            texto: texto,
+            categoria: categoria,
+            likes: 0,
+            numComentarios: 0,
+            comentarios: []
+        };
+
+        //Pone la publicacion de primera, por ser la mas reciente
+        const lista = leerPublicaciones();
+        lista.unshift(nueva);
+        guardarPublicaciones(lista);
+
+        //Lleva al usuario a reseñas para que vea su publicacion
+        window.location.href = "resenas.html";
+    })
+}
