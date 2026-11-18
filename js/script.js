@@ -209,3 +209,24 @@ if (formPublicacion !== null){
         window.location.href = "resenas.html";
     })
 }
+//Likes
+const botonesLike = document.querySelectorAll(".boton-like");
+//Le dice al boton de like que hacer cuando se le da click}
+botonesLike.forEach(function(boton){
+    boton.addEventListener("click", function(){
+        //Cambia el contador de likes
+        const contador = boton.closest("likes").querySelector(".contador");
+        let cantidad = Number(contador.textContent);
+
+        //Funcion para cuando se le da like o se le quita el like a una publicacion
+        const activo = boton.classList.toggle("activo");
+
+        if (activo){
+            cantidad++;
+        } else {
+            cantidad--;
+        }
+        //Muestra la cantidad de likes
+        contador.textContent = cantidad;
+    });
+});
